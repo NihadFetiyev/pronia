@@ -1,16 +1,43 @@
 header {
+    .topOfTop{
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        background-color: #222222;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        a{
+            width: 160px;
+            color: #fff;
+            background-image: url("https://public-assets.envato-static.com/assets/logos/envato_market-dde916a48af7413e54aa058fe7ae6856752fca799da4bec355f00aea904bfa19.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        button{
+            background-color: #6f9a37;
+            color: #fff;
+            border-radius: 6px;
+            padding: 10px 24px;
+            border: none;
+            transition: 0.5s;
+            &:hover{
+                background-color: #5f8b26;
+            }
+        }
+    }
     .header-top {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 64px;
+        padding: 48px 64px;
         height: 48px;
         background-color: #abd373;
-
         h4 {
             font-size: 15px;
             font-weight: 500;
             color: #fff;
+            margin-top: 50px;
         }
 
         .rightSide {
@@ -18,8 +45,10 @@ header {
             display: flex;
             align-items: center;
             gap: 16px;
+            margin-top: 50px;
 
-            .currency:after, .lang::after {
+            .currency:after,
+            .lang::after {
                 font-family: FontAwesome;
                 border: 0;
                 content: "\f078";
@@ -34,6 +63,7 @@ header {
                 border: none;
                 margin-right: 4px;
             }
+
             .currency {
                 height: 48px;
                 display: flex;
@@ -46,7 +76,7 @@ header {
                     align-items: flex-start;
                     justify-content: center;
                     gap: 5px;
-                    padding: 12px 24px;
+                    padding: 12px 0;
                     width: 120px;
                     height: 72px;
                     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
@@ -54,18 +84,38 @@ header {
                     background-color: #fff;
                     position: absolute;
                     right: 0;
-                    top: 100%;
+                    top: 150%;
                     z-index: 1;
-                    display: none;
+                    opacity: 0;
+                    transition: 0.3s;
+
+                    li {
+                        width: 100%;
+                        padding: 4px;
+
+                        &:hover {
+                            background-color: #abd373;
+                        }
+
+                        a {
+                            margin-left: 16px;
+                        }
+                    }
+                }
+
+                .active {
+                    overflow: visible;
+                    opacity: 1;
+                    top: 100%;
                 }
 
             }
+
             .lang {
                 height: 48px;
                 display: flex;
                 align-items: center;
                 position: relative;
-
 
                 .subLang {
                     display: flex;
@@ -79,19 +129,30 @@ header {
                     background-color: #fff;
                     position: absolute;
                     right: 0;
-                    top: 100%;
+                    top: 150%;
                     z-index: 1;
-                    display: none;
+                    opacity: 0;
+                    transition: 0.3s;
 
                     li {
+                        display: grid;
+                        place-items: center;
                         width: 100%;
                         padding: 4px;
-                        &:hover{
+
+                        &:hover {
                             background-color: #abd373;
                         }
                     }
                 }
+
+                .active {
+                    overflow: visible;
+                    top: 100%;
+                    opacity: 1;
+                }
             }
+
         }
     }
 
@@ -100,7 +161,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 32px 64px;
+        padding: 24px 64px;
         border-bottom: 0.5px solid #cacaca;
 
         .call {
@@ -147,6 +208,11 @@ header {
             color: #929292;
             font-size: 18px;
 
+            .bars {
+                display: none;
+                margin-left: 10px;
+            }
+
             li {
                 position: relative;
                 cursor: pointer;
@@ -155,7 +221,7 @@ header {
             .hover {
                 transition: 0.5s;
 
-                &:hover {
+                &:hover i {
                     color: #abd373;
                 }
             }
@@ -173,6 +239,33 @@ header {
                 position: absolute;
                 left: 14px;
                 bottom: 8px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    header {
+        .header-top{
+            display: none;
+        }
+        .header-bottom {
+            padding: 64px 64px 24px;
+            .call {
+                display: none;
+            }
+
+            ul {
+
+                .users,
+                .heart {
+                    display: none;
+                }
+
+                .bars {
+                    display: block;
+                }
             }
         }
     }
