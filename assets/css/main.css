@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -16,28 +17,164 @@ a {
   text-decoration: none;
 }
 
-nav {
+footer {
+  background-image: url("https://htmldemo.net/pronia/pronia/assets/images/footer/bg/1-1920x465.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 100px 0 0;
+  min-height: 50vh;
+}
+footer .mainfooter {
+  display: flex;
+  align-items: center;
+  padding: 0 48px;
+  gap: 64px;
+}
+footer .mainfooter .leftside {
+  width: 25%;
+}
+footer .mainfooter .leftside p {
+  font-size: 18px;
+  line-height: 1.7;
+  padding: 32px 0;
+}
+footer .mainfooter .leftside ul {
+  display: flex;
+  gap: 16px;
+}
+footer .mainfooter .leftside ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid #5f5f5f;
+  transition: 0.3s;
+}
+footer .mainfooter .leftside ul li:hover {
+  background-color: #91c949;
+}
+footer .mainfooter .leftside ul li:hover a {
+  color: #fff;
+}
+footer .mainfooter .leftside ul li a {
+  color: #000;
+  font-size: 14px;
+}
+footer .mainfooter .link, footer .mainfooter .account, footer .mainfooter .service {
+  width: 16.66%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .mainfooter .link h3, footer .mainfooter .account h3, footer .mainfooter .service h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+footer .mainfooter .link ul li, footer .mainfooter .account ul li, footer .mainfooter .service ul li {
+  margin: 8px 0;
+}
+footer .mainfooter .link ul li a, footer .mainfooter .account ul li a, footer .mainfooter .service ul li a {
+  color: #000;
+  font-size: 18px;
+  transition: 0.3s;
+}
+footer .mainfooter .link ul li a:hover, footer .mainfooter .account ul li a:hover, footer .mainfooter .service ul li a:hover {
+  color: #91c949;
+}
+footer .mainfooter .rightside h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+footer .mainfooter .rightside p {
+  margin: 16px 0 24px;
+}
+footer .mainfooter .rightside p a {
+  font-size: 24px;
+  color: #000;
+  transition: 0.3s;
+}
+footer .mainfooter .rightside p a:hover {
+  color: #91c949;
+}
+footer .mainfooter .rightside span {
+  font-size: 18px;
+}
+footer .mainfooter .rightside img {
+  margin-top: 32px;
+}
+footer .bottomfooter {
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #a7cca2;
+  margin: 0 48px;
+}
+footer .bottomfooter p {
+  font-size: 18px;
+  color: #70a52b;
+}
+footer .bottomfooter p i {
+  color: #cb0606;
+}
+
+@media screen and (max-width: 992px) {
+  footer .mainfooter {
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  footer .mainfooter .leftside {
+    width: 100%;
+  }
+  footer .mainfooter .link, footer .mainfooter .account, footer .mainfooter .service {
+    width: 25%;
+    justify-content: start;
+  }
+  footer .mainfooter .rightside {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer .mainfooter {
+    justify-content: start;
+  }
+  footer .mainfooter .leftside {
+    width: 100%;
+  }
+  footer .mainfooter .link, footer .mainfooter .account, footer .mainfooter .service {
+    width: 100%;
+    justify-content: start;
+  }
+  footer .mainfooter .rightside {
+    width: 100%;
+  }
+}
+.main-nav {
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-nav ul {
+.main-nav ul {
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-nav ul li {
+.main-nav ul li {
   height: 40px;
   padding-right: 32px;
   display: flex;
   align-items: center;
 }
-nav ul li:hover .main {
+.main-nav ul li:hover .main {
   color: #abd373;
 }
-nav ul li a::before {
+.main-nav ul li a::before {
   content: "";
   width: 0%;
   height: 1.5px;
@@ -46,7 +183,7 @@ nav ul li a::before {
   top: 100%;
   background-color: #000;
 }
-nav ul li a {
+.main-nav ul li a {
   display: flex;
   align-items: center;
   height: 39px;
@@ -54,18 +191,18 @@ nav ul li a {
   font-size: 14px;
   position: relative;
 }
-nav ul li a:hover::before {
+.main-nav ul li a:hover::before {
   width: 100%;
   background-color: #abd373;
   transition: 0.5s;
 }
-nav ul .home {
+.main-nav ul .home {
   position: relative;
 }
-nav ul .home:hover .subHome {
+.main-nav ul .home:hover .subHome {
   height: 120px;
 }
-nav ul .home .subHome {
+.main-nav ul .home .subHome {
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -81,23 +218,23 @@ nav ul .home .subHome {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
-nav ul .home .subHome a {
+.main-nav ul .home .subHome a {
   font-size: 16px;
   transition: 0.5s;
   opacity: 1;
   position: static;
 }
-nav ul .home .subHome a:hover {
+.main-nav ul .home .subHome a:hover {
   color: #abd373;
   margin-left: 5px;
 }
-nav ul .shop {
+.main-nav ul .shop {
   position: relative;
 }
-nav ul .shop:hover .submenu {
+.main-nav ul .shop:hover .submenu {
   height: 360px;
 }
-nav ul .shop .submenu {
+.main-nav ul .shop .submenu {
   display: flex;
   width: 840px;
   height: 0px;
@@ -109,23 +246,23 @@ nav ul .shop .submenu {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
-nav ul .shop .submenu li {
+.main-nav ul .shop .submenu li {
   padding-right: 0px;
 }
-nav ul .shop .submenu li h3 {
+.main-nav ul .shop .submenu li h3 {
   margin-bottom: 10px;
 }
-nav ul .shop .submenu li a {
+.main-nav ul .shop .submenu li a {
   position: static;
   font-size: 16px;
   transition: 0.5s;
   opacity: 1;
 }
-nav ul .shop .submenu li a:hover {
+.main-nav ul .shop .submenu li a:hover {
   color: #abd373;
   margin-left: 5px;
 }
-nav ul .shop .submenu .subShop-first {
+.main-nav ul .shop .submenu .subShop-first {
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -139,7 +276,7 @@ nav ul .shop .submenu .subShop-first {
   border-right: 1px solid #d9d9d9;
   margin: 40px 0;
 }
-nav ul .shop .submenu .subShop-second {
+.main-nav ul .shop .submenu .subShop-second {
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -153,7 +290,7 @@ nav ul .shop .submenu .subShop-second {
   border-right: 1px solid #d9d9d9;
   margin: 40px 0;
 }
-nav ul .shop .subShop-third {
+.main-nav ul .shop .subShop-third {
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -166,17 +303,17 @@ nav ul .shop .subShop-third {
   top: 0;
   margin: 40px 0;
 }
-nav ul .blog {
+.main-nav ul .blog {
   position: relative;
 }
-nav ul .blog a:hover::before {
+.main-nav ul .blog a:hover::before {
   display: none;
 }
-nav ul .blog:hover .subBlog {
+.main-nav ul .blog:hover .subBlog {
   height: 140px;
   opacity: 1;
 }
-nav ul .blog .subBlog {
+.main-nav ul .blog .subBlog {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -192,27 +329,27 @@ nav ul .blog .subBlog {
   transition: 0.3s;
   opacity: 0;
 }
-nav ul .blog .subBlog .hidden {
+.main-nav ul .blog .subBlog .hidden {
   padding: 20px 0;
 }
-nav ul .blog .subBlog .hidden a {
+.main-nav ul .blog .subBlog .hidden a {
   font-size: 16px;
   transition: 0.5s;
   opacity: 1;
   position: static;
 }
-nav ul .blog .subBlog .hidden a:hover {
+.main-nav ul .blog .subBlog .hidden a:hover {
   color: #abd373;
   margin-left: 5px;
 }
-nav ul .blog .subBlog .multi {
+.main-nav ul .blog .subBlog .multi {
   position: relative;
 }
-nav ul .blog .subBlog .multi:hover .leveltwo {
+.main-nav ul .blog .subBlog .multi:hover .leveltwo {
   height: 64px;
   opacity: 1;
 }
-nav ul .blog .subBlog .multi .leveltwo {
+.main-nav ul .blog .subBlog .multi .leveltwo {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -228,14 +365,14 @@ nav ul .blog .subBlog .multi .leveltwo {
   transition: 0.3s;
   opacity: 0;
 }
-nav ul .blog .subBlog .multi .leveltwo .subLevelTwo {
+.main-nav ul .blog .subBlog .multi .leveltwo .subLevelTwo {
   position: relative;
 }
-nav ul .blog .subBlog .multi .leveltwo .subLevelTwo:hover .levelThree {
+.main-nav ul .blog .subBlog .multi .leveltwo .subLevelTwo:hover .levelThree {
   height: 64px;
   opacity: 1;
 }
-nav ul .blog .subBlog .multi .leveltwo .subLevelTwo .levelThree {
+.main-nav ul .blog .subBlog .multi .leveltwo .subLevelTwo .levelThree {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -251,15 +388,15 @@ nav ul .blog .subBlog .multi .leveltwo .subLevelTwo .levelThree {
   transition: 0.3s;
   opacity: 0;
 }
-nav ul .pages {
+.main-nav ul .pages {
   height: 40px;
   position: relative;
 }
-nav ul .pages:hover .subPages {
+.main-nav ul .pages:hover .subPages {
   height: 100px;
   opacity: 1;
 }
-nav ul .pages .subPages {
+.main-nav ul .pages .subPages {
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -275,13 +412,13 @@ nav ul .pages .subPages {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
-nav ul .pages .subPages a {
+.main-nav ul .pages .subPages a {
   font-size: 16px;
   transition: 0.5s;
   opacity: 1;
   position: static;
 }
-nav ul .pages .subPages a:hover {
+.main-nav ul .pages .subPages a:hover {
   color: #abd373;
   margin-left: 5px;
 }
@@ -290,6 +427,310 @@ nav ul .pages .subPages a:hover {
   nav {
     display: none;
   }
+}
+.nav-scroll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 64px;
+  height: 0px;
+  background-color: #fff;
+  position: fixed;
+  top: 48px;
+  width: 100%;
+  transition: 0.3s;
+  z-index: 1;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.nav-scroll .navlist {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-scroll .navlist li {
+  height: 40px;
+  padding-right: 32px;
+  display: flex;
+  align-items: center;
+}
+.nav-scroll .navlist li:hover .main {
+  color: #abd373;
+}
+.nav-scroll .navlist li a::before {
+  content: "";
+  width: 0%;
+  height: 1.5px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #000;
+}
+.nav-scroll .navlist li a {
+  display: flex;
+  align-items: center;
+  height: 39px;
+  color: #000;
+  font-size: 14px;
+  position: relative;
+}
+.nav-scroll .navlist li a:hover::before {
+  width: 100%;
+  background-color: #abd373;
+  transition: 0.5s;
+}
+.nav-scroll .navlist .home {
+  position: relative;
+}
+.nav-scroll .navlist .home:hover .subHome {
+  height: 120px;
+}
+.nav-scroll .navlist .home .subHome {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 250px;
+  height: 0px;
+  background-color: #fff;
+  padding: 0 24px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: 0.3s;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+.nav-scroll .navlist .home .subHome .homelist {
+  margin: 10px 0 0;
+}
+.nav-scroll .navlist .home .subHome a {
+  font-size: 16px;
+  transition: 0.5s;
+  opacity: 1;
+  position: static;
+}
+.nav-scroll .navlist .home .subHome a:hover {
+  color: #abd373;
+  margin-left: 5px;
+}
+.nav-scroll .navlist .shop {
+  position: relative;
+}
+.nav-scroll .navlist .shop:hover .submenu {
+  height: 360px;
+}
+.nav-scroll .navlist .shop .submenu {
+  display: flex;
+  width: 840px;
+  height: 0px;
+  background-color: #fff;
+  position: absolute;
+  top: 102%;
+  left: -72px;
+  transition: 0.3s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.nav-scroll .navlist .shop .submenu li {
+  padding-right: 0px;
+}
+.nav-scroll .navlist .shop .submenu li h3 {
+  margin-bottom: 10px;
+}
+.nav-scroll .navlist .shop .submenu li a {
+  position: static;
+  font-size: 16px;
+  transition: 0.5s;
+  opacity: 1;
+}
+.nav-scroll .navlist .shop .submenu li a:hover {
+  color: #abd373;
+  margin-left: 5px;
+}
+.nav-scroll .navlist .shop .submenu .subShop-first {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 280px;
+  height: 280px;
+  padding-left: 32px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #d9d9d9;
+  margin: 40px 0;
+}
+.nav-scroll .navlist .shop .submenu .subShop-second {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 280px;
+  height: 280px;
+  padding-left: 32px;
+  overflow: hidden;
+  position: absolute;
+  left: 280px;
+  top: 0;
+  border-right: 1px solid #d9d9d9;
+  margin: 40px 0;
+}
+.nav-scroll .navlist .shop .subShop-third {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 280px;
+  height: 280px;
+  padding-left: 32px;
+  overflow: hidden;
+  position: absolute;
+  left: 560px;
+  top: 0;
+  margin: 40px 0;
+}
+.nav-scroll .navlist .blog {
+  position: relative;
+}
+.nav-scroll .navlist .blog a:hover::before {
+  display: none;
+}
+.nav-scroll .navlist .blog:hover .subBlog {
+  height: 140px;
+  opacity: 1;
+}
+.nav-scroll .navlist .blog .subBlog {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: #ffffff;
+  width: 240px;
+  height: 0px;
+  padding: 12px 24px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: 0.3s;
+  opacity: 0;
+}
+.nav-scroll .navlist .blog .subBlog .hidden {
+  padding: 20px 0;
+}
+.nav-scroll .navlist .blog .subBlog .hidden a {
+  font-size: 16px;
+  transition: 0.5s;
+  opacity: 1;
+  position: static;
+}
+.nav-scroll .navlist .blog .subBlog .hidden a:hover {
+  color: #abd373;
+  margin-left: 5px;
+}
+.nav-scroll .navlist .pages {
+  height: 40px;
+  position: relative;
+}
+.nav-scroll .navlist .pages:hover .subPages {
+  height: 100px;
+  opacity: 1;
+}
+.nav-scroll .navlist .pages .subPages {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 240px;
+  height: 0px;
+  background-color: #fff;
+  padding: 0 24px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: 0.3s;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+.nav-scroll .navlist .pages .subPages .pagelist {
+  margin: 4px 0 0;
+}
+.nav-scroll .navlist .pages .subPages a {
+  font-size: 16px;
+  transition: 0.5s;
+  opacity: 1;
+  position: static;
+}
+.nav-scroll .navlist .pages .subPages a:hover {
+  color: #abd373;
+  margin-left: 5px;
+}
+.nav-scroll .headerlist {
+  display: flex;
+  align-items: center;
+  color: #929292;
+  font-size: 18px;
+  gap: 16px;
+}
+.nav-scroll .headerlist .bars {
+  display: none;
+  margin-left: 10px;
+}
+.nav-scroll .headerlist li {
+  position: relative;
+  cursor: pointer;
+}
+.nav-scroll .headerlist .hover {
+  transition: 0.5s;
+}
+.nav-scroll .headerlist .hover:hover i {
+  color: #abd373;
+}
+.nav-scroll .headerlist .sup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #abd373;
+  color: #fff;
+  position: absolute;
+  left: 14px;
+  bottom: 8px;
+}
+
+@media only screen and (max-width: 992px) {
+  .nav-scroll .navlist {
+    display: none;
+  }
+  .nav-scroll .headerlist .users, .nav-scroll .headerlist .heart {
+    display: none;
+  }
+  .nav-scroll .headerlist .bars {
+    display: block;
+  }
+}
+header .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #222222;
+  color: #fff;
+  border-radius: 6px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  transition: 1s;
+  z-index: 1;
+  transition: 0.3s;
+}
+header .back:hover {
+  background-color: #6f9a37;
 }
 header .topOfTop {
   display: flex;
@@ -900,7 +1341,8 @@ header .header-bottom ul .sup {
   padding-right: 90px;
   display: inline;
 }
-#newproducts .topside h2::before, #newproducts .topside h2::after {
+#newproducts .topside h2::before,
+#newproducts .topside h2::after {
   content: "";
   background-color: #abd373;
   width: 70px;
@@ -1022,5 +1464,191 @@ header .header-bottom ul .sup {
   }
   #newproducts .bottomside .card .textbox {
     padding-left: 0;
+  }
+}
+#whatsay {
+  max-height: 440px;
+  padding: 100px 32px;
+  margin: 0 40px;
+  background-image: url("https://htmldemo.net/pronia/pronia/assets/images/testimonial/bg/1-1-1820x443.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #fff;
+}
+#whatsay .topside {
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+#whatsay .topside h2 {
+  font-size: 32px;
+  position: relative;
+  padding-left: 90px;
+  padding-right: 90px;
+  display: inline;
+}
+#whatsay .topside h2::before,
+#whatsay .topside h2::after {
+  content: "";
+  background-color: #abd373;
+  width: 70px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+}
+#whatsay .topside h2::before {
+  left: 0;
+}
+#whatsay .topside h2::after {
+  right: 0;
+}
+#whatsay .topside p {
+  font-size: 18px;
+  max-width: 580px;
+  margin: 30px 0 55px;
+  line-height: 1.7;
+}
+#whatsay .bottomside {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#whatsay .bottomside .card {
+  width: 33.33%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  padding: 40px 40px 64px;
+  margin: 0 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  max-height: 440px;
+}
+#whatsay .bottomside .card h4 {
+  font-weight: 500;
+  margin: 20px 0 8px;
+}
+#whatsay .bottomside .card span {
+  font-size: 18px;
+}
+#whatsay .bottomside .card p {
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+@media screen and (max-width: 992px) {
+  #whatsay .bottomside {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  #whatsay .bottomside .card {
+    width: 100%;
+  }
+}
+#sponsors {
+  padding: 90px;
+  background-image: url("https://htmldemo.net/pronia/pronia/assets/images/brand/bg/1-1170x300.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-top: 300px;
+  margin-bottom: 100px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin: 300px 30px 100px;
+}
+#sponsors .main-side {
+  display: flex;
+  justify-content: space-around;
+}
+#sponsors .main-side .imgbox {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+#sponsors .main-side .imgbox:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 992px) {
+  #sponsors {
+    margin: 950px 30px 100px;
+  }
+}
+#latestblog {
+  min-height: 100vh;
+  padding: 0 32px 100px;
+}
+#latestblog .topside {
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+#latestblog .topside h2 {
+  font-size: 32px;
+  position: relative;
+  padding-left: 90px;
+  padding-right: 90px;
+  display: inline;
+}
+#latestblog .topside h2::before,
+#latestblog .topside h2::after {
+  content: "";
+  background-color: #abd373;
+  width: 70px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+}
+#latestblog .topside h2::before {
+  left: 0;
+}
+#latestblog .topside h2::after {
+  right: 0;
+}
+#latestblog .topside p {
+  font-size: 18px;
+  max-width: 580px;
+  margin: 30px 0 55px;
+  line-height: 1.7;
+}
+#latestblog .bottomside {
+  display: flex;
+  justify-content: space-around;
+}
+#latestblog .bottomside .card {
+  background-color: #f6f7fb;
+  padding: 35px 30px 40px 30px;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+#latestblog .bottomside .card span {
+  font-size: 12px;
+  color: #abd373;
+}
+#latestblog .bottomside .card h2 {
+  font-size: 20px;
+  margin: 16px 0;
+  transition: 0.3s;
+}
+#latestblog .bottomside .card h2:hover {
+  color: #abd373;
+}
+#latestblog .bottomside .card p {
+  color: #636161;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  #latestblog .bottomside {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #latestblog .bottomside .card {
+    text-align: center;
   }
 }/*# sourceMappingURL=main.css.map */
