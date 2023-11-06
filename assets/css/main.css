@@ -16,6 +16,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: #000000;
 }
 
 footer {
@@ -399,6 +400,7 @@ footer .bottomfooter p i {
 }
 .main-nav ul .blog {
   position: relative;
+  overflow: hidden;
 }
 .main-nav ul .blog a:hover::before {
   display: none;
@@ -406,6 +408,10 @@ footer .bottomfooter p i {
 .main-nav ul .blog:hover .subBlog {
   height: 140px;
   opacity: 1;
+  overflow: visible;
+}
+.main-nav ul .blog:hover {
+  overflow: visible;
 }
 .main-nav ul .blog .subBlog {
   display: -webkit-box;
@@ -431,6 +437,7 @@ footer .bottomfooter p i {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   opacity: 0;
+  overflow: hidden;
 }
 .main-nav ul .blog .subBlog .hidden {
   padding: 20px 0;
@@ -581,7 +588,6 @@ footer .bottomfooter p i {
   z-index: 1;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
 }
 .nav-scroll .navlist {
   height: 40px;
@@ -1081,6 +1087,7 @@ header .header-top .rightSide .currency .subCurrency {
   opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  visibility: hidden;
 }
 header .header-top .rightSide .currency .subCurrency li {
   width: 100%;
@@ -1093,7 +1100,7 @@ header .header-top .rightSide .currency .subCurrency li a {
   margin-left: 16px;
 }
 header .header-top .rightSide .currency .active {
-  overflow: visible;
+  visibility: visible;
   opacity: 1;
   top: 100%;
 }
@@ -1132,6 +1139,7 @@ header .header-top .rightSide .lang .subLang {
   opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  visibility: hidden;
 }
 header .header-top .rightSide .lang .subLang li {
   display: grid;
@@ -1143,7 +1151,7 @@ header .header-top .rightSide .lang .subLang li:hover {
   background-color: #abd373;
 }
 header .header-top .rightSide .lang .active {
-  overflow: visible;
+  visibility: visible;
   top: 100%;
   opacity: 1;
 }
@@ -1599,22 +1607,31 @@ header .header-bottom ul .sup {
 #shopnow {
   min-height: 100vh;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  -ms-flex-line-pack: start;
+      align-content: start;
+  gap: 25px;
   padding: 0 40px;
 }
+#shopnow > div {
+  height: 286px;
+}
+#shopnow > div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 #shopnow .img-long {
-  width: 66.66%;
   position: relative;
 }
 #shopnow .img-long .textbox-long {
   position: absolute;
   left: 10%;
   top: 20%;
-  width: 300px;
 }
 #shopnow .img-long .textbox-long h5 {
   font-size: 18px;
@@ -1637,7 +1654,6 @@ header .header-bottom ul .sup {
   background-color: #343333;
 }
 #shopnow .img-small {
-  width: 33.33%;
   position: relative;
 }
 #shopnow .img-small .textbox-small {
@@ -1913,6 +1929,8 @@ header .header-bottom ul .sup {
   background-color: #fff;
   border-radius: 10px;
   max-height: 440px;
+  position: relative;
+  overflow: hidden;
 }
 #whatsay .bottomside .card h4 {
   font-weight: 500;
@@ -1926,6 +1944,29 @@ header .header-bottom ul .sup {
   font-style: italic;
   margin-top: 20px;
   line-height: 1.7;
+}
+#whatsay .bottomside .card .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  width: 220px;
+  height: 200px;
+  color: #ffffff;
+  background-color: #badf87;
+  border-radius: 50%;
+  position: absolute;
+  right: -90px;
+  top: -90px;
+  overflow: hidden;
+  padding: 0 0 44px 56px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#whatsay .bottomside .card .icon:hover {
+  background-color: #555555;
 }
 
 @media screen and (max-width: 992px) {
@@ -1978,7 +2019,7 @@ header .header-bottom ul .sup {
   }
 }
 #latestblog {
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 0 32px 100px;
 }
 #latestblog .topside {
@@ -2045,6 +2086,30 @@ header .header-bottom ul .sup {
   font-size: 16px;
   line-height: 1.4;
   margin-bottom: 24px;
+}
+#latestblog .bottomside .card .imgbox {
+  position: relative;
+}
+#latestblog .bottomside .card .imgbox .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #abd373;
+  border-radius: 50%;
+  color: #abd373;
+  background-color: #fff;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

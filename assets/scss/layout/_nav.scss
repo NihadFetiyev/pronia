@@ -178,6 +178,7 @@
         }
         .blog {
             position: relative;
+            overflow: hidden;
 
             a {
                 &:hover::before {
@@ -188,6 +189,10 @@
             &:hover .subBlog {
                 height: 140px;
                 opacity: 1;
+                overflow: visible;
+            }
+            &:hover {
+                overflow: visible;
             }
 
             .subBlog {
@@ -205,6 +210,7 @@
                 top: 100%;
                 transition: 0.3s;
                 opacity: 0;
+                overflow: hidden;
 
                 .hidden{
                     padding: 20px 0;

@@ -33,25 +33,37 @@ window.addEventListener("click", () => {
 
 // navin scroll etdikde gelmesi
 let navSroll = document.querySelector(".nav-scroll")
+navSroll.style.height = "0px"
+navSroll.style.opacity = "0"
+navSroll.style.overflow = "hidden"
 
 window.onscroll = function () {
     scrollFunction()
     backFunction()
 };
-function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        navSroll.style.top = "48px"
-        navSroll.style.height = "100px"
-        navSroll.style.opacity = "1"
-    } else {
-        navSroll.style.top = "48px"
+function scrollFunction() {   
+    // scroll etdikde navin widthi artmasi
+    // console.log(window.scrollY);
+    // console.log(document.body.offsetHeight);
+    // console.log(( window.scrollY / document.body.offsetHeight) *100);
+    // navSroll.style.width =   +(( window.scrollY / document.body.offsetHeight) *100) + "%"
+
+     if (window.scrollY < 200) {
         navSroll.style.height = "0px"
         navSroll.style.opacity = "0"
+        navSroll.style.overflow = "hidden"
+
+    }
+    else {
+        navSroll.style.height = "100px"
+        navSroll.style.background = "#fff"
+        navSroll.style.opacity = "1"
+        navSroll.style.overflow = "visible"
+
     }
 };
 
-
-// back scroll etdikde top sehifeye getmek ucun
+// // back scroll etdikde top sehifeye getmek ucun
 const back = document.querySelector(".back")
 
 let scrolling = window.pageYOffset;
@@ -70,3 +82,4 @@ function backFunction() {
     }
     scrolling = currentScrollPos;
 }
+
