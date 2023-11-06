@@ -83,3 +83,51 @@ function backFunction() {
     scrolling = currentScrollPos;
 }
 
+//modal
+let enterModal = document.querySelector(".number")
+let shoppingCart = document.querySelector(".shopping-cart")
+let exitModal = document.querySelector(".exit")
+
+enterModal.addEventListener("click",function () {
+    shoppingCart.classList.add("active")
+})
+
+exitModal.addEventListener("click",function () {
+    shoppingCart.classList.remove("active")
+})
+
+//basket
+
+const cardList = document.querySelector(".cart-list")
+
+function createCard(img_url,productName,productPrice) {
+    const card = document.createElement("div")
+    const img = document.createElement("img")
+    const name = document.createElement("div")
+    const price = document.createElement("div")
+    const btn = document.createElement("button")
+
+    img.setAttribute("src",img_url)
+
+    name.classList.add("name")
+    price.classList.add("price")
+
+    card.append(img,name,price,btn)
+    cardList.append(card)
+
+
+    btn.textContent = "Add to basket"
+    name.textContent = productName
+    price.textContent = productPrice
+}
+
+function getProducts() {
+    axios.get("https://dummyjson.com/products")
+    .then(x=>{
+        x.data.products.forEach(element => {
+            createCard(element.images[0],element.title,element.price)
+        });
+    })
+}
+getProducts()
+
