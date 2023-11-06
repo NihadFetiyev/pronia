@@ -3,7 +3,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 64px;
-    height: 0px;
     background-color: #fff;
     position: fixed;
     top: 48px;
@@ -11,7 +10,6 @@
     transition: 0.3s;
     z-index: 1;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    // overflow: hidden;
 
     .navlist {
         height: 40px;
@@ -21,7 +19,7 @@
 
 
         li {
-            height: 40px;
+            height: 100px;
             padding-right: 32px;
             display: flex;
             align-items: center;
@@ -33,7 +31,7 @@
             a::before {
                 content: "";
                 width: 0%;
-                height: 1.5px;
+                height: 1px;
                 position: absolute;
                 left: 0;
                 top: 100%;
@@ -44,7 +42,7 @@
             a {
                 display: flex;
                 align-items: center;
-                height: 39px;
+                height: 98px;
                 color: #000;
                 font-size: 14px;
                 position: relative;
@@ -111,7 +109,7 @@
                 height: 0px;
                 background-color: #fff;
                 position: absolute;
-                top: 102%;
+                top: 100%;
                 left: -72px;
                 transition: 0.3s;
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);

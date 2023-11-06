@@ -25,7 +25,7 @@ footer {
   background-position: center center;
   background-size: cover;
   padding: 100px 0 0;
-  min-height: 50vh;
+  min-height: 50%;
 }
 footer .mainfooter {
   display: -webkit-box;
@@ -231,7 +231,7 @@ footer .bottomfooter p i {
 .main-nav ul li a::before {
   content: "";
   width: 0%;
-  height: 1.5px;
+  height: 1px;
   position: absolute;
   left: 0;
   top: 100%;
@@ -244,7 +244,7 @@ footer .bottomfooter p i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 39px;
+  height: 38px;
   color: #000;
   font-size: 14px;
   position: relative;
@@ -311,7 +311,7 @@ footer .bottomfooter p i {
   height: 0px;
   background-color: #fff;
   position: absolute;
-  top: 102%;
+  top: 100%;
   left: -72px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -402,9 +402,6 @@ footer .bottomfooter p i {
   position: relative;
   overflow: hidden;
 }
-.main-nav ul .blog a:hover::before {
-  display: none;
-}
 .main-nav ul .blog:hover .subBlog {
   height: 140px;
   opacity: 1;
@@ -438,6 +435,9 @@ footer .bottomfooter p i {
   transition: 0.3s;
   opacity: 0;
   overflow: hidden;
+}
+.main-nav ul .blog .subBlog a:hover::before {
+  display: none;
 }
 .main-nav ul .blog .subBlog .hidden {
   padding: 20px 0;
@@ -578,7 +578,6 @@ footer .bottomfooter p i {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 64px;
-  height: 0px;
   background-color: #fff;
   position: fixed;
   top: 48px;
@@ -602,7 +601,7 @@ footer .bottomfooter p i {
           align-items: center;
 }
 .nav-scroll .navlist li {
-  height: 40px;
+  height: 100px;
   padding-right: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -617,7 +616,7 @@ footer .bottomfooter p i {
 .nav-scroll .navlist li a::before {
   content: "";
   width: 0%;
-  height: 1.5px;
+  height: 1px;
   position: absolute;
   left: 0;
   top: 100%;
@@ -630,7 +629,7 @@ footer .bottomfooter p i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 39px;
+  height: 98px;
   color: #000;
   font-size: 14px;
   position: relative;
@@ -700,7 +699,7 @@ footer .bottomfooter p i {
   height: 0px;
   background-color: #fff;
   position: absolute;
-  top: 102%;
+  top: 100%;
   left: -72px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
